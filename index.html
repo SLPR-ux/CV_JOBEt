@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Étudiant - Badr Ounissi</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
 </head>
 
 <body>
     <div class="cv-container">
         <header class="header section">
             <h1>Badr Ounissi</h1>
-            <p>Étudiant en Informatique, à la recherche d'un job étudiant</p>
+            <p>Étudiant en Informatique, à la recherche d'une alternance ou d'un job étudiant</p>
         </header>
 
         <section class="contact-info section">
             <div class="button-like"><strong>Téléphone :</strong> 06 51 42 26 19</div>
-            <div class="button-like"><strong>Email :</strong> <a href="mailto:Ounissibadr1@gmail.com">Ounissibadr1@gmail.com</a></div>
+            <div class="button-like-info"><strong>Email :</strong> <a href="mailto:Ounissibadr1@gmail.com">Ounissibadr1@gmail.com</a></div>
             <div class="button-like"><strong>Adresse :</strong>12 Rue Julien de la Rovère, 84000 Avignon</div>
             <div class="button-like"><strong>Date de naissance :</strong> 31 Juillet 2005</div>
             <div class="button-like"><strong>Lieu de naissance :</strong> Livry-Gargan</div>
@@ -136,9 +140,42 @@
                 logiciel et matériel.</p>
             <p>En plus de l'informatique, je suis passionné par l'écriture rapide sur clavier et je passe des heures à rédiger, que ce soit pour des projets personnels ou professionnels.</p>
         </section>
+        <button id="download-pdf">Télécharger en PDF</button>
+
+        <!-- Importation des bibliothèques -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+        <script>
+            document.getElementById("download-pdf").addEventListener("click", async() => {
+                // Accéder à jsPDF via le module UMD
+                const {
+                    jsPDF
+                } = window.jspdf;
+
+                try {
+                    // Capturer la page avec html2canvas
+                    const canvas = await html2canvas(document.body, {
+                        scrollY: -window.scrollY
+                    });
+
+                    // Convertir le canvas en image
+                    const imgData = canvas.toDataURL("image/png");
+
+                    // Créer le PDF
+                    const pdf = new jsPDF("p", "px", [canvas.width, canvas.height]);
+                    pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
+                    pdf.save("Mon_CV.pdf");
+                } catch (error) {
+                    console.error("Erreur lors de la création du PDF:", error);
+                }
+            });
+        </script>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>

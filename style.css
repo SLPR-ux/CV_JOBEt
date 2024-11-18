@@ -94,7 +94,7 @@ a {
 }
 
 .button-like:hover {
-    background-color: #2c3e50;
+    background-color: #4d2e2b;
     transform: translateY(-2px);
 }
 
@@ -106,4 +106,38 @@ a {
 .button-like strong {
     color: #e74c3c;
     margin-right: 5px;
+}
+
+.button-like-info {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a1919;
+    color: #ecf0f1;
+    border-radius: 5px;
+    margin: 8px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s;
+    cursor: pointer;
+}
+
+.button-like-info a {
+    color: #b8b8b8;
+    text-decoration: none;
+}
+
+.button-like-info strong {
+    color: #e74c3c;
+    margin-right: 5px;
+}
+
+.button-like-info a:hover {
+    background-color: #2c3e50;
+    transform: translateY(-2px);
+    color: #e74c3c;
+}
+
+.button-like-info:hover {
+    background-color: #2c3e50;
+    transform: translateY(-2px);
+    color: #e74c3c;
 }
