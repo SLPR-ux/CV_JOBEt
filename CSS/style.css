@@ -1,5 +1,40 @@
 /* Styles de base */
 
+
+/* Styles de base */
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Mode sombre */
+
+body.dark-mode {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+}
+
+#toggleTheme {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
 * {
     margin: 0;
     padding: 0;
