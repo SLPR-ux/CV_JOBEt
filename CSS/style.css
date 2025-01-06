@@ -50,6 +50,21 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    margin: 20px 120px;
+}
+
+@media screen and (max-width: 956px) {
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #3d3737;
+        color: #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        margin: 20px 5px;
+    }
 }
 
 .cv-container {
@@ -139,6 +154,34 @@ a {
 }
 
 .button-like strong {
+    color: #e74c3c;
+    margin-right: 5px;
+}
+
+.button-like-dirige {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a1919;
+    color: #ecf0f1;
+    border-radius: 5px;
+    margin-top: 8px;
+    margin-right: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s;
+    cursor: pointer;
+}
+
+.button-like-dirige:hover {
+    background-color: #4d2e2b;
+    transform: translateY(-2px);
+}
+
+.button-like-dirige a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.button-like-dirige strong {
     color: #e74c3c;
     margin-right: 5px;
 }

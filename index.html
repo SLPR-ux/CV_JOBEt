@@ -137,42 +137,18 @@
 
         <section class="interests section">
             <h2>Centres d'intérêt</h2>
-            <p>Passionné par le football et les jeux vidéo, en particulier ceux avec des graphismes de haute qualité et des mécaniques innovantes. Je m'intéresse également à la mécanique automobile et aux nouvelles technologies, notamment en matière de développement
-                logiciel et matériel.</p>
-            <p>En plus de l'informatique, je suis passionné par l'écriture rapide sur clavier et je passe des heures à rédiger, que ce soit pour des projets personnels ou professionnels.</p>
+            <div class="button-like">
+                <p>Passionné par le football et les jeux vidéo, en particulier ceux avec des graphismes de haute qualité et des mécaniques innovantes. Je m'intéresse également à la mécanique automobile et aux nouvelles technologies, notamment en matière
+                    de développement logiciel et matériel.</p>
+                <p>En plus de l'informatique, je suis passionné par l'écriture rapide sur clavier et je passe des heures à rédiger, que ce soit pour des projets personnels ou professionnels.</p>
+            </div>
         </section>
-        <a href="CV Étudiant - Badr Ounissi.pdf" class="btn-download" download>Télécharger mon CV</a> <a style="margin-left: 50px;" href="https://bvdcvline.netlify.app" class="btn-download" download>Retour à l'Accueil</a>
+        <div class="button-like"><a href="CV Étudiant - Badr Ounissi.pdf" class="btn-download" download>Télécharger mon CV</a></div>
+        <div class="button-like-dirige"><a href="https://bvdcvline.netlify.app" class="btn-download" download>Acceuil de mon site</a></div>
 
         <!-- Importation des bibliothèques -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-        <script>
-            document.getElementById("download-pdf").addEventListener("click", async() => {
-                // Accéder à jsPDF via le module UMD
-                const {
-                    jsPDF
-                } = window.jspdf;
-
-                try {
-                    // Capturer la page avec html2canvas
-                    const canvas = await html2canvas(document.body, {
-                        scrollY: -window.scrollY
-                    });
-
-                    // Convertir le canvas en image
-                    const imgData = canvas.toDataURL("image/png");
-
-                    // Créer le PDF
-                    const pdf = new jsPDF("p", "px", [canvas.width, canvas.height]);
-                    pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
-                    pdf.save("Mon_CV.pdf");
-                } catch (error) {
-                    console.error("Erreur lors de la création du PDF:", error);
-                }
-            });
-        </script>
-
     </div>
 
     <script src="Script/script.js"></script>
